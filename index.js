@@ -1,7 +1,6 @@
 const { Client, Intents, Collection } = require("discord.js");
 const dotenv = require("dotenv");
 const fs = require("fs");
-const config = require("./config.json");
 const DisTube = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 const { SoundCloudPlugin } = require("@distube/soundcloud");
