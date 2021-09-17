@@ -5,14 +5,13 @@ exports.run =async (guildId) => {
         prefix: ',',
         welcomeChannel: null,
         welcomeRole: null,
-        guildid: guild,
+        guildid: guildId,
         muteRole: null,
         adminRoles: [],
         confessChannel: null,
         logChannel: null,
         generalChannel: null,
-        sid: null,
-        isFirst: true,
+        voiceChannel: null,
         badwords: []
     })
 }

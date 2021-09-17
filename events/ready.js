@@ -3,7 +3,6 @@ module.exports = (client) => {
   const guilds = client.guilds.cache.map(guild => guild.id)
   client.user.setActivity("Wholesome Posting Server", { type: "WATCHING" })
   console.log(`Ready to serve in ${client.channels.cache.size} channels on ${client.guilds.cache.size} servers`);
-  
   const guild = client.guilds.cache.get("862622743106551808")
   let slcommands
   if (guild) slcommands = guild.commands

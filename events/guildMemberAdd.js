@@ -1,5 +1,5 @@
 const jimp = require("jimp")
-const redis = require("../redis")
+const redis = require("../utils/redis")
 const db = require('quick.db')
 module.exports = async (client, member) => {
     let settings = await db.get(member.guildId)

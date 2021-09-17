@@ -1,7 +1,10 @@
+const db = require('quick.db')
 module.exports={
     name: "msg",
     description: "none",
     async execute(client,interaction){
+        const settings = await db.get(interaction.guildId)
+        if (interaction.member.id != settings.owner) return "You can't use this command."
         msg=undefined
         ci=undefined
         mi=undefined
@@ -15,5 +18,6 @@ module.exports={
         else if(ci && !mi) client.channels.cache.get(ci).send(msg)
         else if(!ci && !mi) client.channels.cache.get("882609100943417344").send(msg)
         else if(!ci && mi) client.channels.cache.get("882609100943417344").send({content:msg,reply:{messageReference:mi}})
+        return "Ok"
     }
 }

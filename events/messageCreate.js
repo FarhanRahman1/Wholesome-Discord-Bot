@@ -8,22 +8,21 @@ module.exports = async (client, message) => {
     emojiwords = message.content.toLowerCase().match(/<a:.+?:\d+>|<:.+?:\d+>/g);
     if (emojiwords == null) emojiwords = []
     await settings.badwords.some(word => {
-      if (message.content.toLowerCase().includes(word)) {
-        if (!emojiwords.some(emoji => emoji.includes(word))) {
+      if (message.content.toLowerCase().includes(word) && !emojiwords.some(emoji => emoji.includes(word))) {
           message.delete().then(res => message.channel.send(`${message.member.user} Please do not swear!`))
-        }
       }
     })
     return;
   };
-  const songcmds=['autoplay','filter','nowplaying','pause','play','queue','remove','repeat','resume','seek','skip','stop','volume']
+  const songcmds=['autoplay','filter','nowplaying','pause','play','queue','remove','repeat','resume','seek','skip','stop','volume','disconnect']
   const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
 
   if (!cmd) return;
   if(songcmds.includes(command) || songcmds.includes(cmd.aliases)){
-    if(!settings.isFirst && settings.sid!=message.channel.id)return message.reply("I'm playing in a different channel right now.")
+    if(!message.member.voice.channel) return message.reply("You need to be connected to a voice channel first.")
+    else if(message.member.voice.channel.id!=settings.voiceChannel && settings.voiceChannel!=null) return message.reply("I'm playing in a different channel right now.")
   }
   cmd.run(client, message, args);
 };
