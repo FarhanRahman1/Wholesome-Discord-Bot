@@ -13,7 +13,9 @@ exports.run=async (client, message, args) => {
             mode = 2
             break
     }
+    if(!args[0]) mode = 0
     mode = client.distube.setRepeatMode(message, mode)
     mode = mode ? mode === 2 ? "Repeat queue" : "Repeat song" : "Off"
     message.reply({embeds:[await client.embeds.repeatMode(mode)]})
 }
+exports.aliases=['loop']

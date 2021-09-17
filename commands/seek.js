@@ -7,3 +7,4 @@ exports.run=async (client, message, args) => {
     await client.distube.seek(message, time);
     message.react('✅').catch(console.error)
 }
+exports.aliases=[]

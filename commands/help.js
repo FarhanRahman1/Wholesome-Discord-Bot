@@ -19,7 +19,7 @@ exports.run = async (client, message) => {
         embeds: [helpEmbed],
         components: [row]
     }).then(msg=>{
-        const collector = message.channel.createMessageComponentCollector({time:15000});
+        const collector = message.channel.createMessageComponentCollector({time:60000});
         collector.on('collect', async i => {
             if (i.customId === 'n') await i.update({ embeds: [songEmbed], components: [row] });
             else if (i.customId == 'p') await i.update({ embeds: [helpEmbed], components: [row] });

@@ -4,3 +4,4 @@ exports.run=async (client, message, args) => {
     await client.distube.stop(message)
     message.react('✅')
 }
+exports.aliases=[]

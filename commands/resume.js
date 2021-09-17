@@ -5,3 +5,4 @@ exports.run=async (client, message, args) => {
     client.distube.resume(message)
     message.react('▶️').catch(console.error)
 }
+exports.aliases=[]

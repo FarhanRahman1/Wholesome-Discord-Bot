@@ -25,7 +25,7 @@ module.exports = {
     },
     async np(queue, status) {
         return new MessageEmbed()
-            .setDescription(`Now Playing \`${queue.songs[0].name}\` - \`${queue.songs[0].formattedDuration}\``)
+            .setTitle(`Now Playing \`${queue.songs[0].name}\` - \`${queue.songs[0].formattedDuration}\``)
             .addField("Status", status(queue))
             .setColor('#d90000');
     },
@@ -41,13 +41,14 @@ module.exports = {
     },
     async listAdd(playlist) {
         return new MessageEmbed()
-            .setDescription(`Added \`${playlist.name}\` playlist (${playlist.songs.length} songs) to the queue`)
+            .setTitle(`Added \`${playlist.name}\` playlist to the queue`)
             .setFooter(playlist.user.username, playlist.user.displayAvatarURL())
             .setColor('#d90000');
     },
     async songAdd(song) {
         return new MessageEmbed()
-            .setDescription(`Added ${song.name} - \`${song.formattedDuration}\` to the queue`)
+            .setTitle(`Added ${song.name}`)
+            .addField("Duration",song.formattedDuration)
             .setFooter(song.user.username, song.user.displayAvatarURL())
             .setColor('#d90000');
     },
@@ -55,7 +56,7 @@ module.exports = {
         return new MessageEmbed()
             .setTitle("Now Playing")
             .addField(song.name, song.formattedDuration)
-            .addField(status(queue))
+            .addField("Status",status(queue))
             .setColor('#d90000');
     },
     async helpGeneral() {
