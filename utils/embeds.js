@@ -5,9 +5,10 @@ module.exports = {
             .setDescription(text)
             .setColor('#d90000');
     },
-    async newQueue(queue) {
+    async newQueue(queue,i,j) {
+        let k=i
         const title = "Playing: " + queue.songs[0].name
-        const des = queue.songs.slice(1, 11).map((song, i) => `${i + 1}. ${song.name}-${song.formattedDuration}`).join("\n")
+        const des = queue.songs.slice(i, j).map(song => `${k++}. ${song.name}-${song.formattedDuration}`).join("\n")
         return new MessageEmbed()
             .setTitle(title)
             .setDescription(des)
@@ -25,7 +26,7 @@ module.exports = {
     },
     async np(queue, status) {
         return new MessageEmbed()
-            .setTitle(`Now Playing \`${queue.songs[0].name}\` - \`${queue.songs[0].formattedDuration}\``)
+            .setTitle(`Now Playing ${queue.songs[0].name} - \`${queue.songs[0].formattedDuration}\``)
             .addField("Status", status(queue))
             .setColor('#d90000');
     },
@@ -96,22 +97,23 @@ module.exports = {
         return new MessageEmbed()
             .setTitle('Wholesome Posting Commands')
             .setColor('#0099ff')
-            .setDescription('\`Song Commands:\`(Cannot be accessed unless you are connected to a voice channel)')
+            .setDescription('\`Song Commands:\`')
             .setThumbnail('https://i.imgur.com/20l3pQW.jpg')
             .setURL('https://wholesomeposting.com/')
             .addFields(
                 { name: 'play/p <song name>', value: 'play a song', inline: true },
                 { name: 'pause/resume', value: 'pause/resume the song', inline: true },
                 { name: 'autoplay/ap', value: 'autoplay songs similar to the playing song', inline: true },
-                { name: 'filter off/3d/vaporwave/bassboost/echo/nightcore/karaoke/flanger/gate/haas/reverse/surround/mcompand/phaser/tremolo/earwax', value: 'well you get the point right' },
+                { name: 'filter <off/3d/vaporwave/bassboost/echo/nightcore/karaoke/flanger/gate/haas/reverse/surround/mcompand/phaser/tremolo/earwax>', value: 'well you get the point right' },
                 { name: 'nowplaying/np', value: 'shows the playing song', inline: true },
-                { name: 'queue/q', value: "shows the playing queue" },
-                { name: 'remove <song number>', value: 'removes a song from the queue' },
-                { name: 'repeat song/queue/off', value: 'repeat the song,queue or turn it off' },
-                { name: 'seek <seconds>', value: 'skip the song to the desired time' },
-                { name: 'skip', value: 'skip to next song' },
+                { name: 'queue/q', value: "shows the playing queue", inline: true  },
+                { name: 'remove <song number>', value: 'removes a song from the queue', inline: true  },
+                { name: 'repeat song/queue/off', value: 'repeat the song,queue or turn it off', inline: true  },
+                { name: 'seek <seconds>', value: 'skip the song to the desired time', inline: true  },
+                { name: 'skip', value: 'skip to next song', inline: true  },
+                { name: 'jump <song number>', value: 'jump to a song in the queue', inline: true  },
                 { name: 'stop', value: 'stop the song/queue' },
-                { name: 'volume/v <number>', value: 'set the volume' }
+                { name: 'volume/v <number>', value: 'set the volume', inline: true  }
             )
             .setTimestamp()
             .setFooter('Page 2 of 2 | Have a wholesome day!', 'https://i.imgur.com/20l3pQW.jpg');

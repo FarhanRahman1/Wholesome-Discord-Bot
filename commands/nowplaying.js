@@ -5,3 +5,4 @@ exports.run=async (client, message, args) => {
     message.reply({embeds:[await client.embeds.np(queue,status)]})
 }
 exports.aliases=['np']
+exports.isSong=true

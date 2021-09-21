@@ -27,3 +27,4 @@ exports.run = async (client, message) => {
         collector.on('end', collected => console.log(`Collected ${collected.size} items`));
     })
 }
+exports.isSong=false

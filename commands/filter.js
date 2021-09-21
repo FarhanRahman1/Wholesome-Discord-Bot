@@ -7,3 +7,4 @@ exports.run=async (client, message, args) => {
     message.reply({embeds:[await client.embeds.newFilter(queue)]})
 }
 exports.aliases=['f']
+exports.isSong=true

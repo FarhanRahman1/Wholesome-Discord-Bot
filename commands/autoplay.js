@@ -6,3 +6,4 @@ exports.run = async (client, message, args) => {
     message.reply({embeds:[await client.embeds.autoplayMode(mode)]})
 }
 exports.aliases=['ap']
+exports.isSong=true

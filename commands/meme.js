@@ -9,3 +9,4 @@ exports.run=(client,message,args)=>{
     }
     getpost()
 }
+exports.isSong=false

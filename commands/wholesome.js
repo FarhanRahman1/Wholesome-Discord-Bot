@@ -9,3 +9,4 @@ exports.run=(client,message,args)=>{
     getpost()
 }
 exports.aliases=['w']
+exports.isSong=false

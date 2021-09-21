@@ -8,3 +8,4 @@ exports.run=(client,message,args)=>{
     }
     cl.roast().then((res) => message.channel.send(`${target} ${res.roast}`)).catch(e=>console.log(e));
 }
+exports.isSong=false

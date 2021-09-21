@@ -6,3 +6,4 @@ exports.run=async (client, message, args) => {
     message.react('⏸️').catch(console.error)
 }
 exports.aliases=[]
+exports.isSong=true

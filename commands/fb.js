@@ -14,3 +14,4 @@ exports.run = (client, message, args) => {
     )
 }
 exports.aliases=['facebook']
+exports.isSong=false

@@ -5,3 +5,4 @@ exports.run=(client,message,args)=>{
     if(!target) return message.reply("Mention someone")
     cl.yomama().then((res) => message.channel.send(`${target} ${res.description}`)).catch(e=>console.log(e));
 }
+exports.isSong=false

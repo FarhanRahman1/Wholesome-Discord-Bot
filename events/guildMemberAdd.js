@@ -2,7 +2,7 @@ const jimp = require("jimp")
 const redis = require("../utils/redis")
 const db = require('quick.db')
 module.exports = async (client, member) => {
-    let settings = await db.get(member.guildId)
+    let settings = await db.get(member.guild.id)
     const redisClient = await redis()
     try {
         redisClient.get(`muted-${member.id}-${member.guild.id}`, (err, result) => {

@@ -16,8 +16,8 @@ module.exports={
         })
         if(ci && mi) client.channels.cache.get(ci).send({content:msg,reply:{messageReference:mi}})
         else if(ci && !mi) client.channels.cache.get(ci).send(msg)
-        else if(!ci && !mi) client.channels.cache.get("882609100943417344").send(msg)
-        else if(!ci && mi) client.channels.cache.get("882609100943417344").send({content:msg,reply:{messageReference:mi}})
+        else if(!ci && !mi) client.channels.cache.get(settings.generalChannel).send(msg)
+        else if(!ci && mi) client.channels.cache.get(settings.generalChannel).send({content:msg,reply:{messageReference:mi}})
         return "Ok"
     }
 }

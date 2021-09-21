@@ -4,3 +4,4 @@ exports.run = (client, message, args) => {
     message.react('✅')
 }
 exports.aliases=['dc']
+exports.isSong=true

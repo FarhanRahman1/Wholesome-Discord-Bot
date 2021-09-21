@@ -13,3 +13,4 @@ exports.run=async (client, message, args) => {
     } catch (e) {console.log(e);}
 }
 exports.aliases=['p']
+exports.isSong=true

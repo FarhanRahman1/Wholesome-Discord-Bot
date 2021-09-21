@@ -7,3 +7,4 @@ exports.run=async (client, message, args) => {
     message.reply({embeds:[await client.embeds.vol(volume)]})
 }
 exports.aliases=['v']
+exports.isSong=true

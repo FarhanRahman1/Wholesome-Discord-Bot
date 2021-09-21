@@ -19,3 +19,4 @@ exports.run=async (client, message, args) => {
     message.reply({embeds:[await client.embeds.repeatMode(mode)]})
 }
 exports.aliases=['loop']
+exports.isSong=true

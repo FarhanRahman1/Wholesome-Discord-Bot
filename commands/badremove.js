@@ -15,3 +15,4 @@ exports.run=async(client,message,args)=>{
     message.reply(sendlist.length>0?`${sendlist.join(" ,")} have been removed!`:`Not added yet!`).catch(e=>console.log(e))
 }
 exports.aliases=['br']
+exports.isSong=false

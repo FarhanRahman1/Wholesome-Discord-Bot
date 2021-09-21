@@ -26,3 +26,4 @@ exports.run = (client, message, args) => {
     }).startGame();
 
 }
+exports.isSong=false

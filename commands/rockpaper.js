@@ -30,3 +30,4 @@ exports.run=(client,message,args)=>{
     
 }
 exports.aliases=['rps']
+exports.isSong=false

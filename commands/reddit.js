@@ -8,3 +8,4 @@ exports.run=(client,message,args)=>{
     }).catch(e=>console.log(e))
 }
 exports.aliases=['r']
+exports.isSong=false

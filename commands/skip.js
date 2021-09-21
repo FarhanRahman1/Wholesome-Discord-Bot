@@ -9,3 +9,4 @@ exports.run=async (client, message, args) => {
     }
 }
 exports.aliases=['next']
+exports.isSong=true

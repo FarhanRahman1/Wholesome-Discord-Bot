@@ -27,3 +27,4 @@ exports.run = (client, message, args) => {
     
 }
 exports.aliases=['ttt']
+exports.isSong=false

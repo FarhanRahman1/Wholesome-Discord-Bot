@@ -5,3 +5,4 @@ exports.run=async (client, message, args) => {
     message.react('✅')
 }
 exports.aliases=[]
+exports.isSong=true

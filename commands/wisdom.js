@@ -4,3 +4,4 @@ exports.run = (client, message, args) => {
     }).then(quote => message.reply(quote)).catch(e => console.log(e))
 }
 exports.aliases=['inspire']
+exports.isSong=false

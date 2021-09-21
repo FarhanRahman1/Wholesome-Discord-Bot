@@ -12,3 +12,4 @@ exports.run=async(client,message,args)=>{
     message.reply(sendlist.length>0?`${sendlist.join(" ,")} have been added as swear word!`:`It's already added!`).catch(e=>console.log(e))
 }
 exports.aliases=['ba']
+exports.isSong=false

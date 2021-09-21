@@ -6,4 +6,5 @@ exports.run=async (client, message, args) => {
     await queue.songs.splice(index,1)
     message.react('✅').catch(console.error)
 }
-exports.aliases=['qr']
+exports.aliases=['rm']
+exports.isSong=true

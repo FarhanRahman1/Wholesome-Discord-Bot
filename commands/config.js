@@ -23,3 +23,4 @@ exports.run = async (client, message, args) => {
     db.set(message.guildId, settings)
     message.react("✅")
 }
+exports.isSong=false

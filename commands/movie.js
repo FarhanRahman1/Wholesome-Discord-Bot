@@ -31,3 +31,4 @@ exports.run =(client,message,args)=>{
     })
 }
 exports.aliases=['m']
+exports.isSong=false
