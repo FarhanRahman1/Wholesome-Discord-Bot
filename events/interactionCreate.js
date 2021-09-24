@@ -6,9 +6,10 @@ module.exports = async (client, interaction) => {
     const { commandName, options } = interaction
     client.slcommands.get(commandName).execute(client, interaction).catch(e=>interaction.reply({
         content: "Oh no looks like there was an unknown error",
-        ephemeral: ['mute', 'kick', 'ban', 'unmute', 'clear'].includes(commandName) ? false : true
+        ephemeral: true
     })).then(res => interaction.reply({
-        content: res,
-        ephemeral: ['mute', 'kick', 'ban', 'unmute', 'clear'].includes(commandName) ? false : true
+        content: commandName=="hangman"?"\u200B":res,
+        embeds:commandName=="hangman"?[res]:[],
+        ephemeral: ['mute', 'kick', 'ban', 'unmute', 'clear','hangman'].includes(commandName) ? false : true
     }))
 }

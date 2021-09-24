@@ -1,6 +1,10 @@
 const db = require('quick.db');
 module.exports = (client) => {
   const guilds = client.guilds.cache.map(guild => guild.id)
+  guilds.forEach(guild=>db.set(`${guild}.voiceChannel`,null));
+  let ch=client.channels.cache.get("864072003011346456")
+console.log(ch);
+console.log(client.channels.cache.get("864072003011346455"));
   client.user.setActivity("Wholesome Posting Server", { type: "WATCHING" })
   console.log(`Ready to serve in ${client.channels.cache.size} channels on ${client.guilds.cache.size} servers`);
   const guild = client.guilds.cache.get("862622743106551808")
@@ -108,6 +112,18 @@ module.exports = (client) => {
       {
         name: 'mi',
         description: "none",
+        required: false,
+        type: 3
+      }
+    ]
+  })
+  slcommands.create({
+    name: "hangman",
+    description: "The Hangman game",
+    options: [
+      {
+        name: 'sentence',
+        description: "If ignored, a random word will be chosen",
         required: false,
         type: 3
       }

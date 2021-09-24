@@ -18,6 +18,8 @@ const client = new Client({
     ]
 })
 dotenv.config()
+var text = fs.readFileSync("./utils/hangmanwords.txt", "utf-8");
+client.hangwords = text.split("\n");
 client.reddit = new snoowrap({
     clientId: process.env.REDDITID,
     userAgent: process.env.REDDIT_AGENT,

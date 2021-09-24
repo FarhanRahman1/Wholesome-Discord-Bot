@@ -22,3 +22,4 @@ exports.run=async(client,message,args)=>{
 }else{return message.reply("Enter a text to translate and language code(optional)")}
 }
 exports.aliases=['tl']
+exports.isSong=false

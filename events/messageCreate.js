@@ -14,17 +14,13 @@ module.exports = async (client, message) => {
     })
     return;
   };
-  const songcmds = ['autoplay', 'filter', 'nowplaying', 'pause', 'play', 'queue', 'remove', 'repeat', 'resume', 'seek', 'skip', 'stop', 'volume', 'disconnect']
   const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
   if (!cmd) return;
-  if (cmd.isSong) {
-    if (songcmds.includes(command) || cmd.aliases.includes(command)) {
-      console.log(cmd.aliases);
+    if (cmd.isSong) {
       if (message.member.voice.channel == null) return message.reply("You need to be connected to a voice channel first.")
       else if (message.member.voice.channel.id != settings.voiceChannel && settings.voiceChannel != null) return message.reply("I'm playing in a different channel right now.")
     }
-  }
   cmd.run(client, message, args);
 };
